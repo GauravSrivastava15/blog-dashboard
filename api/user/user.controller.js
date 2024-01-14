@@ -1,6 +1,6 @@
 import express from 'express'
 import mongoose from 'mongoose'
-import { userSignUpRepo } from './user.repository'
+import { userSignUpRepo, userSingInRepo } from './user.repository'
 import bcrypt from 'bcrypt'
 
 export const userSignUp = async (req, res) =>{
@@ -12,4 +12,8 @@ export const userSignUp = async (req, res) =>{
     }else{
         res.status(500).send("user not created")
     }
+}
+
+export const userSignIn = async (req, res) =>{
+    const resp = await userSingInRepo(req.body)
 }
