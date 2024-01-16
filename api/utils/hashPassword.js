@@ -1,5 +1,5 @@
 import bcrypt from "bcrypt";
-import { customErrorHandler } from "../middlewares/errorHandler.js";
+import { customErrorHandler } from "../middleware/errorHandler.js";
 
 export const hashPassword = async (password, next) => {
   try {
